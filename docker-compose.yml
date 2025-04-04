@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  bring-api:
+    build:
+      context: .
+    container_name: bring_microservice
+    ports:
+      - "8000:8000"
+    environment:
+      - BRING_EMAIL=${BRING_EMAIL}
+      - BRING_PASSWORD=${BRING_PASSWORD}
+    restart: unless-stopped

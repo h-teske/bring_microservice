@@ -1,0 +1,6 @@
+bring-api
+fastapi
+mashumaro
+orjson
+python-dotenv
+uvicorn[standard]
