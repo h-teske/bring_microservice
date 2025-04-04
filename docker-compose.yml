@@ -2,10 +2,17 @@ services:
   bring-api:
     build:
       context: .
-    container_name: bring_microservice
+    container_name: bring_api
     ports:
       - "8000:8000"
     environment:
       - BRING_EMAIL=${BRING_EMAIL}
       - BRING_PASSWORD=${BRING_PASSWORD}
     restart: unless-stopped
+    networks:
+      ${NETWORK_NAME}:
+        ipv4_address: ${IPV4_ADDRESS}
+
+networks:
+  ${NETWORK_NAME}:
+    external: true
