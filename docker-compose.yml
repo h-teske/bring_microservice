@@ -10,9 +10,9 @@ services:
       - BRING_PASSWORD=${BRING_PASSWORD}
     restart: unless-stopped
     networks:
-      ${NETWORK_NAME}:
+      docker:
         ipv4_address: ${IPV4_ADDRESS}
 
 networks:
-  ${NETWORK_NAME}:
+  docker:
     external: true
